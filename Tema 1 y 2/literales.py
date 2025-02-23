@@ -1,0 +1,7 @@
+print(0xa123)
+print("Me gusta'Monty Python'")
+print('Me gusta"Monty Python"')
+print(True>False)
+print(True<False)
+print(1>2)
+print("\"Estoy\"\n\"\"aprendiendo\"\"\n\"\"\"Python\"\"\"")

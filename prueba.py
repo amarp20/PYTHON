@@ -1,6 +1,6 @@
 #coding: latin1
 def saludo():
-    a=int(input("Introduzca el primer número: "))
+    a=int(input("Introduzca el primer nÃºmero: "))
     if a%2==0:
         print("par")
     else:

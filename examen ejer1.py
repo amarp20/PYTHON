@@ -1,14 +1,14 @@
 # coding: latin1
-# Tenemos un termostato inteligente que envía el valor entero decimal, en grados centígrados de la temperatura a nuestra función de Python y espera un valor de retorno.
-# Debe realizar una función Python llamada "ajuste" que reciba como parámetro la temperatura, en un parámetro llamado temperatura. 
-# Deberá devolver el valor False, True o None:
+# Tenemos un termostato inteligente que envï¿½a el valor entero decimal, en grados centï¿½grados de la temperatura a nuestra funciï¿½n de Python y espera un valor de retorno.
+# Debe realizar una funciï¿½n Python llamada "ajuste" que reciba como parï¿½metro la temperatura, en un parï¿½metro llamado temperatura. 
+# Deberï¿½ devolver el valor False, True o None:
 
-# False enciende el aire acondicionado y apaga la calefacción.
-# True enciende la calefacción y apaga el aire acondicionado.
+# False enciende el aire acondicionado y apaga la calefacciï¿½n.
+# True enciende la calefacciï¿½n y apaga el aire acondicionado.
 # None apaga ambos equipos.
  
-# Si la temperatura es mayor a 27º, debe encender el aire acondicionado.
-# Si la temperatura es menor a 19º, debe encender la calefacción.
+# Si la temperatura es mayor a 27ï¿½, debe encender el aire acondicionado.
+# Si la temperatura es menor a 19ï¿½, debe encender la calefacciï¿½n.
 # Entre 19 y 27 grados (ambos incluidos) ambos equipos deben estar apagados.
 
 def ajuste(temperatura):
@@ -16,7 +16,7 @@ def ajuste(temperatura):
   if temperatura > 27:
     return False  # Encender aire acondicionado
   elif temperatura < 19:
-    return True   # Encender calefacción
+    return True   # Encender calefacciï¿½n
   else:
     return None  # Apagar ambos
 
@@ -25,7 +25,7 @@ temperatura_actual = 25
 resultado = ajuste(temperatura_actual)
 
 if resultado is True:
-  print("Encender calefacción")
+  print("Encender calefacciÃ³n")
 elif resultado is False:
   print("Encender aire acondicionado")
 else:
@@ -36,13 +36,13 @@ else:
   # coding: latin1
 def ajuste(temperatura):
     if temperatura > 27:
-        print("Aire acondicionado encendido. Calefacción apagada")
+        print("Aire acondicionado encendido. CalefacciÃ³n apagada")
         return False
     elif temperatura < 19:
-        print("Calefacción encendida. Aire acondicionado apagado")
+        print("CalefacciÃ³n encendida. Aire acondicionado apagado")
         return True   
     else:
-        print("Aire acondicionado y calefacción apagados.")
+        print("Aire acondicionado y calefacciÃ³n apagados.")
         return None
         
 ajuste(20)

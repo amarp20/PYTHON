@@ -1,16 +1,16 @@
 # coding: latin1
-# Tenemos un depósito de agua con una capacidad total de 1800 litros, que está conectado a una bomba de agua para su relleno. 
-# La bomba de agua envía 90 litros por minuto.
-# Tenemos un medidor del depósito, que nos indica exactamente cuantos litros de agua nos quedan en el depósito.
+# Tenemos un depï¿½sito de agua con una capacidad total de 1800 litros, que estï¿½ conectado a una bomba de agua para su relleno. 
+# La bomba de agua envï¿½a 90 litros por minuto.
+# Tenemos un medidor del depï¿½sito, que nos indica exactamente cuantos litros de agua nos quedan en el depï¿½sito.
 
-# Debe realizar una función llamada "llenado".
-# Esta función recibe como parámetro los litros de agua que quedan en el depósito, el parámetro se llamará litros.
-# La función devolverá un entero, que marca el tiempo en segundos que debe estar encendida la bomba, para llenar el depósito.
-# El llenado del depósito nunca debe provocar un desbordamiento.
-# El llenado del depósito nunca debe tener una diferencia mayor a 1,5 litros con respecto a la capacidad total.
-# No se permite utilizar instrucciones for ni while dentro de la función.
+# Debe realizar una funciï¿½n llamada "llenado".
+# Esta funciï¿½n recibe como parï¿½metro los litros de agua que quedan en el depï¿½sito, el parï¿½metro se llamarï¿½ litros.
+# La funciï¿½n devolverï¿½ un entero, que marca el tiempo en segundos que debe estar encendida la bomba, para llenar el depï¿½sito.
+# El llenado del depï¿½sito nunca debe provocar un desbordamiento.
+# El llenado del depï¿½sito nunca debe tener una diferencia mayor a 1,5 litros con respecto a la capacidad total.
+# No se permite utilizar instrucciones for ni while dentro de la funciï¿½n.
  
-# Una vez tenga realizada la función, debe llamar a la misma para los siguientes valores del medidor:
+# Una vez tenga realizada la funciï¿½n, debe llamar a la misma para los siguientes valores del medidor:
 # 1648
 # 1696
 # 1780
@@ -22,7 +22,7 @@ def llenado(litros, contador=-1):
     tiempo=int(contador*60+resto*(6/9))
 
     if litros >=1710:
-        print("La bomba funcionará durante ", tiempo , "segundos para completar el llenado.")
+        print("La bomba funcionarÃ¡ durante ", tiempo , "segundos para completar el llenado.")
     else:
         litros=litros+90
         return llenado(litros, contador)

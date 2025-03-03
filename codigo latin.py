@@ -1,2 +1,2 @@
 # coding: latin1
-print("¡Hola!")
+print("Â¡Hola!")

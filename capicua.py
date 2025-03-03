@@ -1,9 +1,9 @@
 #coding: latin1
 
 def comprobar():
-    numero=int(input("Ingrese un número de tres cifras para su comprobación: "))
+    numero=int(input("Ingrese un nÃºmero de tres cifras para su comprobaciï¿½n: "))
     if numero <= 99 or numero > 999:
-            print("El número tiene que ser de tres cifras.")
+            print("El nÃºmero tiene que ser de tres cifras.")
             return comprobar()
     if numero > 99 and numero <= 999:
 
@@ -13,7 +13,7 @@ def comprobar():
         valores=[centena, decena, unidad]
 
         if unidad == centena:
-            print("Capicúa")
+            print("CapicÃºa")
         if centena + unidad == decena:
             print("El centro gana.")
         if (centena+decena+unidad)%10==0:

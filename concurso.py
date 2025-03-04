@@ -1,19 +1,16 @@
 import random
 class concurso:
-    NombreCaja=int()
     lista=[1,2,3]
     gana_sin_cambio=0
     gana_con_cambio=0
     pierde_sin_cambio=0
     pierde_con_cambio=0
-    iteraciones=0
     
-    def __init__(self):
-        pass
-    
-    def concursar(self, iteraciones):
+    def __init__(self, iteraciones):
         self.iteraciones=iteraciones
-        for i in range(0, iteraciones):
+    
+    def concursar(self): 
+        for i in range(0, self.iteraciones):
             self.lista=[1,2,3]
             jugador=random.choice(self.lista)
             premio=random.choice(self.lista)
@@ -47,6 +44,6 @@ class concurso:
     def informe(self):
         print(f"Cambiando la caja el jugador ha: \n -ganado el {(self.gana_con_cambio/self.iteraciones)*100}% de las veces. \n -perdido el {(self.pierde_con_cambio/self.iteraciones)*100}% de las veces. \n -no cambiando: \n -ganado el {(self.gana_sin_cambio/self.iteraciones)*100}% de las veces. \n -perdido el {(self.pierde_sin_cambio/self.iteraciones)*100}% de las veces.")
                 
-concurso1 = concurso()
-concurso1.concursar(100)
+concurso1 = concurso(100)
+concurso1.concursar()
 concurso1.informe()

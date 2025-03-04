@@ -1,42 +1,54 @@
 import math
 
 class Lanzamiento():
+
     gravedad=9.81
-    angulo=int()
-    velocidad=int()
-    angulo_rad=math.radians(angulo)
-   
-    def __init__(self, alcance, altura_max):
-        self.alcance=(velocidad**2)*math.sin(2*angulo_rad)/gravedad
-        self.altura_max=(velocidad**2)*(math.sin(angulo_rad))**2/(2*gravedad)  
-   
-    def setter(self):
-        angle=int(input("Introduce el valor del ángulo de lanzamiento:  "))
-        self.angulo=angle
-        
-    def veloz(self):
-        speed=int(input("Introduce la velocidad del proyectil:  "))
-        self.velocidad=speed
-        
-    def resultados(self, alcance, altura_max):
     
-        while True:
-
-            print(f"El alcance máximo del proyectil a {angulo} grados es de: {round(alcance,3)} metros.")
-            print(f"La altura máxima del proyectil  a {angulo} grados es de:  {round(altura_max,3)} metros.")
+    def __init__(self, angulo, velocidad):
+        self.angulo = angulo
+        self.velocidad = velocidad
     
-lanzamiento1=Lanzamiento()
-lanzamiento1.setter()
-lanzamiento1.veloz()  
-lanzamiento1.resultados()
-
-
-'''
-Se creará la clase "Lanzamiento" y tendrá varios métodos:
-
-Método para establecer el ángulo de lanzamiento ("setter")
-Método para establecer la velocidad
-Para los dos datos anteriores también hacer métodos para consultar el valor ("gettters")
-La gravedad es una variable que va en el código (ej. gravedad = 9.81)
-Un método que realice el cálculo del alcance y la altura máxima y nos imprima por pantalla los resultados
-'''
+    def getter_angulo(self):
+        return self.angulo
+    
+    def getter_velocidad(self):
+        return self.velocidad
+        
+    def setter_angulo(self, angulo):
+        self.angulo=angulo
+        
+    def setter_velocidad(self, velocidad):
+        self.velocidad=velocidad
+     
+    def disparo(self):
+        angulo_rad=math.radians(self.getter_angulo())
+        alcance=(self.getter_velocidad()**2)*math.sin(2*angulo_rad)/self.gravedad
+        altura_max=(self.getter_velocidad()**2)*(math.sin(angulo_rad))**2/(2*self.gravedad)  
+        print(f"\nEl alcance máximo con ángulo {self.getter_angulo()} es de: {round(alcance, 3)} metros.")
+        print(f"La altura máxima con ángulo {self.getter_angulo()} es de: {round(altura_max, 3)} metros.\n")
+        
+def entrada():
+    angulo = None
+    velocidad = None
+    while True:
+        print(f"\nCalculadora marca ACME \nSeleccione una opción: \nIntroduzca 1 para introducir los datos. \nIntroduzca 2 para consultar los datos. \nIntroduzca 3 para realizar el cáculo.")
+        opcion=int(input(f"Introduzca cualquier otro valor para salir del programa.\n"))
+        if opcion == 1:
+            angulo=int(input("Introduce el valor del ángulo de lanzamiento:  "))
+            velocidad=int(input("Introduce la velocidad del proyectil:  "))
+        elif opcion == 2:
+            if angulo is None or velocidad is None:
+                print(f"\n¡¡¡POR FAVOR, INTRODUZCA PRIMERO LOS DATOS.!!!\n")
+            else:
+                print(f"\nEl ángulo seleccionado es {angulo} grados.\nLa velocidad seleccionada es {velocidad}m/s.\n")
+        elif opcion == 3:
+            if angulo is None or velocidad is None:
+                print(f"\n¡¡¡POR FAVOR, INTRODUZCA PRIMERO LOS DATOS.!!!\n")
+            else:
+                tiro = Lanzamiento(angulo, velocidad)
+                tiro.disparo()
+        else:
+            print("gracias por usar la calculadora de alcances marca ACME")
+            break
+        
+entrada()

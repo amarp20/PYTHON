@@ -23,13 +23,13 @@ class profesor():
         self.salario = salario
         
     def asignar_asignatura(self):
-        clase=int(input(f"Elija una opción de las siguientes para asignar una asignatura:\n1 BD\n2 HTML\n3 PYTHON\n"))
         while True:
-            if clase >=1:
-                self.asignatura = asignaturas[clase]
+            clase=int(input(f"\nElija una opción de las siguientes para asignar una asignatura:\n1 BD\n2 HTML\n3 PYTHON\n"))
+            if clase >=1 and clase <=3:
+                self.asignatura = asignaturas[clase-1]
                 break
             else:
-                print("Elija un número válido.")
+                print("\nElija un número válido.")
     
     def asignar_sueldo(self):
         horas=float(input("Introduzca el número de horas impartidas: "))
@@ -47,5 +47,3 @@ profesor1 = profesor("Manolo")
 profesor1.asignar_asignatura()
 profesor1.asignar_sueldo()
 profesor1.mostrar_datos()
-
-    

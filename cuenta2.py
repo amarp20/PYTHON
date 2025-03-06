@@ -28,17 +28,17 @@ class cuenta:
     def ingreso(self):
         cantidad = float(input("Seleccione la cantidad a ingresar:  "))
         print("Operación realizada con éxito, su saldo actual es: ")
-        self.saldo = cantidad + self.saldo
+        self.saldo += cantidad
         print(self.saldo)
         
     def retirada(self):
-        calidad = float(input("Seleccione la cantidad a retirar:  "))
-        if calidad > self.saldo:
+        cantidad = float(input("Seleccione la cantidad a retirar:  "))
+        if cantidad > self.saldo:
             print("No dispone de crédito suficiente para realizar esta operación, su saldo actual es: ")
             print(self.saldo)
         else:
             print("Operación realizada con éxito, su saldo actual es: ")
-            self.saldo = self.saldo - calidad
+            self.saldo -= cantidad
             print(self.saldo)
             
     def entrada(self):
@@ -71,7 +71,7 @@ class cuenta:
                 print("El número introducido no corresponde a ninguna cuenta de esta entidad.")
                 
 
-cuenta1 = cuenta(123456, 4500.23)
-cuenta2 = cuenta(123457, 1500.10)
-cuenta3 = cuenta(123458, 2347.14)
+cuenta1 = cuenta(lista[0], 4500.23)
+cuenta2 = cuenta(lista[1], 1500.10)
+cuenta3 = cuenta(lista[2], 2347.14)
 cuenta1.numero_cuenta()

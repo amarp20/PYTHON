@@ -27,13 +27,3 @@ def fib(n):
 
 for n in range(1, 10):
     print(n, "->", fib(n))
-
-def fib(n):
-    if n < 0:
-        return None
-    if n < 2:
-        return 1
-    return n * fib(n-1)
-
-for n in range(1, 10):
-    print(n, "->", fib(n))

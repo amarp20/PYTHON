@@ -13,5 +13,4 @@ hora_final=((hora*60+duracion+minutos)//60)%24
 
 minutos_finales=(duracion+minutos)%60
 
-print("Hora de inicio: ", hora,":",minutos,"."," Duracion del partido: ",duracion," minutos.", " Hora de finalizacion del partido: ", 
-      hora_final,":",minutos_finales)
+print(f"Hora de inicio:  {hora}:{minutos}, Duracion del partido: {duracion} minutos. Hora de finalizacion del partido: {hora_final}:{minutos_finales}")

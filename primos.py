@@ -1,22 +1,19 @@
-'''
-def es_primo(num):
-    if num<2:
-        return False
-    else:
-        for i in range(2,(num-1)):
-            if num % i == 0:
-                return False
-        return True
+''' OPCIÓN LARGA '''
+def es_primal(num):
+    for i in range(2,(num-1)):
+        if num % i == 0:
+            return False
+    return True
         
 def lista_primos():
     primos=[]
     for i in range(2,101):
-        if es_primo(i):
+        if es_primal(i):
             primos.append(i)
     return primos
 
 print(lista_primos())
-'''
+
 def es_primo():
     primos=[]
     for i in range(2,101):
@@ -26,6 +23,5 @@ def es_primo():
         else:
             primos.append(i)
     print(primos)
-    
-es_primo()
+
     

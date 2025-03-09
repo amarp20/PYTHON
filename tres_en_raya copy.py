@@ -7,9 +7,10 @@ tablero=[[" ","A"," ","B"," ","C"],
         ["3","_","|","_","|","_"]
         ]
 
-posiciones=["A1","A2","A3","B1","B2","B3","C1","C2","C3"]
-numeros_col = [1, 2, 3]
-numeros_fil = [1, 3, 5]
+posiciones = ["A1","A2","A3","B1","B2","B3","C1","C2","C3"]
+coordenadas = [tablero[1][1], tablero[1][3], tablero[1][5], 
+               tablero[2][1], tablero[2][3], tablero[2][5],
+               tablero[3][1], tablero[3][3], tablero[3][5]]
 
 print("Bienvenido al juego del tres en raya.")
 
@@ -21,6 +22,7 @@ def posicionar():
             while True:
                 if tablero[1][1] == "_":
                     tablero[1][1] = ficha_cap
+                    coordenadas.remove(tablero[1][1])
                     break
                 else:
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -29,6 +31,7 @@ def posicionar():
             while True:
                 if tablero[2][1] == "_":
                     tablero[2][1] = ficha_cap
+                    coordenadas.remove(tablero[2][1])
                     break
                 else:
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -37,6 +40,7 @@ def posicionar():
             while True:
                 if tablero[3][1] == "_":
                     tablero[3][1] = ficha_cap
+                    coordenadas.remove(tablero[3][1])
                     break
                 else:
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -45,6 +49,7 @@ def posicionar():
             while True:
                 if tablero[1][3] == "_":
                     tablero[1][3] = ficha_cap
+                    coordenadas.remove(tablero[1][3])
                     break
                 else:
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -53,6 +58,7 @@ def posicionar():
             while True:
                 if tablero[2][3] == "_":
                     tablero[2][3] = ficha_cap
+                    coordenadas.remove(tablero[2][3])
                     break
                 else:           
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -61,6 +67,7 @@ def posicionar():
             while True:
                 if tablero[3][3] == "_":
                     tablero[3][3] = ficha_cap
+                    coordenadas.remove(tablero[3][3])
                     break
                 else:           
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -69,6 +76,7 @@ def posicionar():
             while True:
                 if tablero[1][5] == "_":
                     tablero[1][5] = ficha_cap
+                    coordenadas.remove(tablero[1][5])
                     break
                 else:           
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -77,6 +85,7 @@ def posicionar():
             while True:
                 if tablero[2][5] == "_":
                     tablero[2][5] = ficha_cap
+                    coordenadas.remove(tablero[2][5])
                     break
                 else:           
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -85,6 +94,7 @@ def posicionar():
             while True:
                 if tablero[3][5] == "_":
                     tablero[3][5] = ficha_cap
+                    coordenadas.remove(tablero[3][5])
                     break
                 else:           
                     print("La opción escogida no está disponible, escoja otra posición.")
@@ -112,16 +122,8 @@ def posicionar_pnj():
     else:
         ficha_pnj = "X"
     
-    numero_c = random.choice(numeros_col)
-    numero_f = random.choice(numeros_fil)
-
-    while True:
-        if tablero[numero_c][numero_f] == "_":
-                    tablero[numero_c][numero_f] = ficha_pnj
-                    victoria()
-                    break
-        else:
-            continue
+    posicion_pnj = random.choice(coordenadas)
+    tablero(posicion_pnj) = ficha_pnj
 
 while True:
     ficha=input("Elige tu ficha para jugar X o O: ")

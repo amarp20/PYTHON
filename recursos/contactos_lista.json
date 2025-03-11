@@ -1,18 +1,1 @@
-{
-    "contactos": [ 
-        {
-            "nombre":"Alejandro",
-            "apellidos":"Martín Pérez",
-            "DNI":"3625347243j",
-            "email":"erfrewfer@gmail.com",
-            "militar":true
-        },
-        {
-            "nombre":"Ramón",
-            "apellidos":"Cascales Beltrán",
-            "DNI":"3634535k",
-            "email":"erfrfjhgj@gmail.com",
-            "militar":false
-        }
-    ]
-}
+{}

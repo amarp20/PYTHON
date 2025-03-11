@@ -7,6 +7,8 @@ tablero=[[" ","A"," ","B"," ","C"],
         ["3","_","|","_","|","_"]
         ]
 
+x = 0
+ficha_pnj = " "
 posiciones=["A1","A2","A3","B1","B2","B3","C1","C2","C3"]
 numeros_col = [1, 2, 3]
 numeros_fil = [1, 3, 5]
@@ -91,7 +93,6 @@ def posicionar():
     else:
         print("la opción escogida no es válida.")
 
-x = 0
 def victoria():
     global x
     if tablero[1][1] != "_" and tablero[1][1] == tablero[1][3] and tablero[1][5] == tablero[1][1]:
@@ -104,6 +105,12 @@ def victoria():
         x = 1
     elif tablero[1][5] != "_" and tablero[1][5] == tablero[2][3] and tablero[1][5] == tablero[3][1]:
         x = 1
+    elif tablero[1][1] != "_" and tablero[1][1] == tablero[2][1] and tablero[3][1] == tablero[1][1]:
+        x = 1
+    elif tablero[1][3] != "_" and tablero[1][3] == tablero[2][3] and tablero[3][3] == tablero[1][3]:
+        x = 1
+    elif tablero[1][5] != "_" and tablero[1][5] == tablero[2][5] and tablero[3][5] == tablero[1][5]:
+        x = 1
 
 def posicionar_pnj():
     global ficha_cap
@@ -112,16 +119,12 @@ def posicionar_pnj():
     else:
         ficha_pnj = "X"
     
-    numero_c = random.choice(numeros_col)
-    numero_f = random.choice(numeros_fil)
-
     while True:
+        numero_c = random.choice(numeros_col)
+        numero_f = random.choice(numeros_fil)
         if tablero[numero_c][numero_f] == "_":
                     tablero[numero_c][numero_f] = ficha_pnj
-                    victoria()
                     break
-        else:
-            continue
 
 while True:
     ficha=input("Elige tu ficha para jugar X o O: ")
@@ -131,16 +134,22 @@ while True:
         break
     else:
         print("Opción no válida.")
-    
+
 while x != 1:
         print(tb(tablero))
         posicionar()
         victoria()
+        if x == 1:
+            ficha_ganadora=ficha_cap
+            break 
         posicionar_pnj()
         victoria()
-
+        if x == 1:
+            ficha_ganadora=ficha_pnj
+            break 
+        
 print(tb(tablero))
-print("Fin del juego")
+print(f"Fin del juego, gana {ficha_ganadora}")
     
 
     

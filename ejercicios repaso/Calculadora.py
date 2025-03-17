@@ -8,9 +8,7 @@ class Claculadora():
         self.numero2 = numero2
         
     def elegir_numeros(self):
-        self.numero1=input("Introduzca el primer número para operar: ")
-        if self.numero1 !=int or self.numero1 !=float:
-            self.elegir_numeros()
+        self.numero1=float(input("Introduzca el primer número para operar: "))
         self.numero2=float(input("Introduzca el segundo número para operar: "))
             
     def sumar(self):

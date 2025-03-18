@@ -1,7 +1,7 @@
 '''Crea una clase Claculadora que tenga métodos para sumar, restar, multiplicar y dividir dos números.
 Incluye un constructor que inicialice los dos números como atributos.'''
 
-class Claculadora():
+class Calculadora():
     
     def __init__(self, numero1=0, numero2=0):
         self.numero1 = numero1
@@ -39,5 +39,5 @@ class Claculadora():
                 calculo.elegir_numeros()
                 calculo.dividir()
            
-calculo = Claculadora()
+calculo = Calculadora()
 calculo.menu()

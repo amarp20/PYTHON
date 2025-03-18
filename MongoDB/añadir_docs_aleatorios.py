@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from datetime import datetime, timedelta
 
 # Conectar a MongoDB (ajusta la URL si es necesario)
-client = MongoClient("mongodb://admin:admin123@localhost:27017/")
+client = MongoClient("mongodb://admin:admin123@localhost:27017/?authSource=admin")
 db = client["practica_6"]
 
 # 🔹 Colección de Clientes

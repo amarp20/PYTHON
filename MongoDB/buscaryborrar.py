@@ -14,5 +14,3 @@ productos3 = productos.find_one({"nombre":"raton"}) #Con este buscamos un solo t
 print(productos3)
 
 productos.delete_one({"nombre":"raton"}) #eliminar un documento
-
-productos.update_one({"nombre":"raton"}, {"$set": {"precio": 80}}) #actualizar un dato de un producto

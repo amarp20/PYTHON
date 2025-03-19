@@ -16,7 +16,7 @@ class ConversorTemperartura():
         
     def conv_fah_cel(self):
         self.temperatura = float(input("Introduzca la temperatura en grados Farenheit: "))
-        celsius = (self.temperatura-32)*1.8
+        celsius = (self.temperatura-32)*(5/9)
         return celsius
         
     def menu(self):
@@ -32,11 +32,3 @@ class ConversorTemperartura():
                   
 conversion = ConversorTemperartura()
 conversion.menu()
-        
-        
-        
-        
-        
-        
-Fahrenheit = (Celsius * 1.8) + 32
-celsius = (Fahrenheit-32)*1.8

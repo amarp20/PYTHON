@@ -26,17 +26,17 @@ def index():
 
 def delete(id):
     collection.delete_one({"_id": ObjectId(id)}) #eliminamos por ID
-    return redirect(url_for("index"))
+    return redirect(url_for("index")) #Una vez borrado vuelve a index, pero con esa persona borrada
 
 #Ruta para editar una persona existente
 @app.route("/edit/<id>", methods=["GET", "POST"])
 def edit(id):
-    persona = collection.find_one({"_id": ObjectId(id)})
-    if request.method == "POST":
-        nuevo_nombre = request.form.get("nombre")
-        collection.update_one({"_id": ObjectId(id)}, {"$set": {"nombre": nuevo_nombre}})
-        return redirect(url_for("index"))
-    return render_template("edit.html", persona=persona)
+    persona = collection.find_one({"_id": ObjectId(id)}) #Se busca a la persona por el id
+    if request.method == "POST": #Método POST para lanzar información
+        nuevo_nombre = request.form.get("nombre") #El nuevo nombre será el que se meta en el formulario
+        collection.update_one({"_id": ObjectId(id)}, {"$set": {"nombre": nuevo_nombre}}) #Se hace la modificación
+        return redirect(url_for("index")) #Después de hacer la modificación vuelve a la página index
+    return render_template("edit.html", persona=persona) #Haga lo que haga abre la páginan edit donde persona es igual a persona del index
 
 if __name__ == "__main__":
     app.run(debug=True) #con esto se inicia el servidor flask

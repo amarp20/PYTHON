@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from nuevacalc import Calculadora as maquina
+from A_Calculadora import Calculadora as maquina
 
 class CalculadoraGUI():
     

@@ -4,28 +4,32 @@ Añade un método que calcule el valor total del inventario (precio × cantidad)
 
 class Producto():
     
-    inventario = {
-        "raton":{
-        "precio":30,
-        "cantidad":100},
-        "teclado":{
-        "precio":40,
-        "cantidad":100},
-        "cpu":{
-        "precio":500,
-        "cantidad":100}
-    }
+    inventario = {}
+    totales = []
     
-    def __init__(self):
-        pass
+    def __init__(self, nombre, precio, cantidad):
+        self.nombre=nombre
+        self.precio=precio
+        self.cantidad=cantidad
     
+    def meter_productos(self):
+        self.inventario[self.nombre]={"precio":self.precio, "cantidad": self.cantidad}
+        
+
     def precio_total(self):
-        total_raton=self.inventario["raton"]["precio"] * self.inventario["raton"]["cantidad"]
-        total_teclado=self.inventario["teclado"]["precio"] * self.inventario["teclado"]["cantidad"]
-        total_cpu=self.inventario["cpu"]["precio"] * self.inventario["cpu"]["cantidad"]
-        total = total_teclado + total_raton + total_cpu
-        return total
+        for i in self.inventario:
+            total=self.inventario[i]["precio"]*self.inventario[i]["cantidad"]
+            self.totales.append(total)
+        print(sum(self.totales))
+            
     
-valor = Producto()
-print(valor.precio_total())
+cosa1 = Producto("raton",20,50)
+cosa1.meter_productos()
+cosa2 = Producto("teclado",30,50)
+cosa2.meter_productos()
+cosa3 = Producto("cpu",200,50)
+cosa3.meter_productos()
+cosa4 = Producto("monitor",100,50)
+cosa4.meter_productos()
+cosa4.precio_total()
 

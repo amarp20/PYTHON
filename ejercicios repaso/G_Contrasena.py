@@ -5,7 +5,7 @@ Incluye un método que verifique si la contraseña tiene al menos 8 caracteres, 
 class Validador():
     
     numeros = "0123456789"
-    mayusculas = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890"
+    mayusculas = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
     mensaje1 = "Su contraseña no es válida. Su longitud ha ser ser mínimo de ocho caracteres y ha de tener al menos una mayúscula y un número."
     mensaje2 = "Contraseña actualizada."
     
@@ -13,7 +13,13 @@ class Validador():
         self.contrasena = contrasena
         
     def validar(self):
-        tiene_numero = any
+        tiene_numero = any(caracter in self.numeros for caracter in self.contrasena)
+        tiene_mayuscula = any(caracter in self.mayusculas for caracter in self.contrasena)
+        longitud_valida = len(self.contrasena) > 7
+        if tiene_numero and tiene_mayuscula and longitud_valida:
+            return self.mensaje2
+        else:
+            return self.mensaje1 
             
 contrasena1 = Validador("Alejandro1")
 contrasena2 = Validador("alejandro1")
@@ -24,17 +30,5 @@ print(contrasena2.validar())
 print(contrasena3.validar())
 print(contrasena4.validar())
 
-  def validar(self):
-        # Verifica si la contraseña tiene al menos un número
-        tiene_numero = any(caracter in self.numeros for caracter in self.contrasena)
-        # Verifica si la contraseña tiene al menos una mayúscula
-        tiene_mayuscula = any(caracter in self.mayusculas for caracter in self.contrasena)
-        # Verifica si la longitud de la contraseña es mayor a 7
-        longitud_valida = len(self.contrasena) > 7
-
-        # Valida todos los requisitos
-        if tiene_numero and tiene_mayuscula and longitud_valida:
-            return self.mensaje2
-        else:
-            return self.mensaje1
+        
 

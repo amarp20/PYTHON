@@ -11,7 +11,6 @@ class Adivinanza():
 
     def generar_numero(self):
         self.numero = random.randint(1,100)
-        print(self.numero)
 
     def juego(self):
         counter = 0
@@ -25,13 +24,13 @@ class Adivinanza():
                     print(f"{eleccion} es más bajo que el numero que escogí.")
                     counter +=1
                 elif eleccion == self.numero:
-                    print(f"¡¡¡GANASTE EN TAN SOLO {counter} INTENTOS")
+                    print(f"¡¡¡GANASTE EN TAN SOLO {counter} INTENTOS!!!")
                     break
                 else:
-                    print("El número aportado no es válido.")
+                    print("Te he dicho que entre 0 100, que no te enteras!!!!.")
                     counter +=1
             except Exception as e:
-                print(f"Eso que has introducido no me cuardra por {e}")
+                print(f"Que paza killo, que es ezo que has escribio?")
                 
 
 

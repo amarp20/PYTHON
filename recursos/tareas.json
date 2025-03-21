@@ -1,0 +1,9 @@
+{
+    "FREGAR EL SUELO": {
+        "Estado": "Completada"
+    },
+    "HACER LA CENA": {
+        "Descripcion": "preparar comida helthie",
+        "Estado": "No completada"
+    }
+}

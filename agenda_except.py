@@ -61,15 +61,6 @@ class Agenda():
         else:
             print(f"El contacto '{contacto}' no se encuentra en la lista.")
             
-    def actualizar_nombre(self):
-        contacto = str.upper(input("Introduzca el nombre del contacto que desea cambiar: "))  
-        if contacto in self.contactos:
-            nuevo_contacto = str.upper(input("Introduzca el nuevo nombre del contacto: "))  
-            self.contactos[nuevo_contacto] = self.contactos.pop(contacto)
-            print("Modificación realizada con éxito.")
-        else:
-            print(f"El contacto '{contacto}' no se encuentra en la lista.")
-            
     def actualizar_telefono(self):
         contacto = str.upper(input("Introduzca el nombre del contacto al que quiere cambiar el teléfono: "))  
         if contacto in self.contactos:
@@ -106,7 +97,7 @@ class Agenda():
             with open(self.archivo, "w") as f: #esta función volverá a abrir el archivo json exterior para guardar los datos que hayamos cambiado
                 json.dump(self.contactos, f, indent=4) #guardamos self.contactos que es el diccionario que estamos usando en memoria en el json
         except Exception as e:
-            print(f"La agenda no se ha cerraro correctamente debido a un error de {e}.\nPodría perder los datos que no haya guardado.\nSi el problema persiste Llame al servicio de atención 666 66 66 66.")
+            print(f"La agenda no se ha cerrado correctamente debido a un error de {e}.\nPodría perder los datos que no haya guardado.\nSi el problema persiste Llame al servicio de atención 666 66 66 66.")
             print("Volviendo al menú inicial............")
             time.sleep(5)
             contacto = Agenda()

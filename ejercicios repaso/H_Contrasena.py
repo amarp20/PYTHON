@@ -6,8 +6,10 @@ class Validador():
     
     numeros = "0123456789"
     mayusculas = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
-    mensaje1 = "Su contraseña no es válida. Su longitud ha ser ser mínimo de ocho caracteres y ha de tener al menos una mayúscula y un número."
+    mensaje1 = "Su contraseña no es válida. Ha de tener al menos un número."
     mensaje2 = "Contraseña actualizada."
+    mensaje3 = "Su contraseña no es válida. Ha de tener al menos una mayúscula."
+    mensaje4 = "Su contraseña no es válida. Ha de tener al ocho caracteres."
     
     def __init__(self, contrasena):
         self.contrasena = contrasena
@@ -16,8 +18,14 @@ class Validador():
         tiene_numero = any(caracter in self.numeros for caracter in self.contrasena)
         tiene_mayuscula = any(caracter in self.mayusculas for caracter in self.contrasena)
         longitud_valida = len(self.contrasena) > 7
-        if tiene_numero and tiene_mayuscula and longitud_valida:
-            return self.mensaje2
+        if tiene_numero:
+            if tiene_mayuscula:
+                if longitud_valida:
+                    return self.mensaje2
+                else:
+                    return self.mensaje4
+            else:
+                return self.mensaje3
         else:
             return self.mensaje1 
             

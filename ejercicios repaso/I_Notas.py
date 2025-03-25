@@ -36,4 +36,3 @@ class Notas():
         
 alumno = Notas()
 alumno.meter_notas()
-    

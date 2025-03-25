@@ -15,11 +15,13 @@ class CuentaBancaria():
 
     def retirar(self):
         cantidad = float(input("Introduzca la cantidada a retirar: "))
-        if self.saldo - cantidad >= 0:
+        try:
+            if self.saldo - cantidad < 0:
+                raise ValueError("Saldo insuficiente")
             self.saldo = self.saldo - cantidad
             print(f"El nuevo saldo es de {self.saldo}€.")
-        else:
-            print(f"Operación cancelada, saldo insuficiente.\nSu saldo es de {self.saldo}€.")
+        except ValueError as e:
+            print(f"Operación cancelada: {e}\nSu saldo es de {self.saldo}€.")
 
     def consultar(self):
         print(f"Su saldo es de {self.saldo}€.")
@@ -39,5 +41,3 @@ class CuentaBancaria():
 
 consulta1 = CuentaBancaria("Manuel", 1500)
 consulta1.menu()
-  
-        

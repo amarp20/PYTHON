@@ -15,8 +15,8 @@ class Validador():
         self.contrasena = contrasena
         
     def validar(self):
-        tiene_numero = any(caracter in self.numeros for caracter in self.contrasena)
-        tiene_mayuscula = any(caracter in self.mayusculas for caracter in self.contrasena)
+        tiene_numero = any(i in self.numeros for i in self.contrasena)
+        tiene_mayuscula = any(i in self.mayusculas for i in self.contrasena)
         longitud_valida = len(self.contrasena) > 7
         if tiene_numero:
             if tiene_mayuscula:

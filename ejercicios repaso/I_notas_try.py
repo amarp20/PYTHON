@@ -2,7 +2,7 @@
 Crea una clase Notas con una lista de calificaciones como atributo.
 Implementa un método que calcule el promedio y otro que devuelva la nota más alta. Añade manejo de excepciones para evitar notas inferiores a 0 o superiores a 10.'''
 
-class Notas():
+class Notas:
     
     calificaciones=[]
     
@@ -21,7 +21,7 @@ class Notas():
                 notas = float(input("Introduzca las calificaciones obtenidas por el alumno, pulse -1 para dejar de introducir notas.\n"))
                 if notas == -1:
                     break
-                if notas <= 0 or notas >= 10:
+                if notas < 0 or notas > 10:
                     raise ValueError("el valor introducido no es válido.")
                 self.calificaciones.append(notas)
             except ValueError as e:

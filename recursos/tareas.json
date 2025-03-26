@@ -1,9 +1,10 @@
 {
-    "FREGAR EL SUELO": {
+    "HACER LA COMIDA": {
+        "Descripcion": "usar ingrdientes y utensilios de cocina",
         "Estado": "Completada"
     },
-    "HACER LA CENA": {
-        "Descripcion": "preparar comida helthie",
+    "FREGAR LOS PLATOS": {
+        "Descripcion": "usar jab\u00f3n y estropajo",
         "Estado": "No completada"
     }
 }

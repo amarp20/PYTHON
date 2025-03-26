@@ -2,7 +2,7 @@
 Crea una clase Rectangulo con atributos para ancho y alto.
 Incluye métodos para calcular el área y el perímetro, usando un constructor para inicializar los valores.'''
 
-class Rectangulo():
+class Rectangulo:
 
     def __init__(self, lado_menor, lado_mayor):
         self.lado_menor = lado_menor
@@ -12,7 +12,7 @@ class Rectangulo():
         print(f"El área es {self.lado_mayor * self.lado_menor}")
     
     def perimetro(self):
-        print(f"El perímetro es {self.lado_mayor + self.lado_menor * 2}")
+        print(f"El perímetro es {(self.lado_mayor + self.lado_menor) * 2}")
     
 shape1 = Rectangulo(34,98)
 shape1.area()

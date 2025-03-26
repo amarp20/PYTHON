@@ -2,7 +2,7 @@
 Crea una clase Estudiante con atributos para nombre, edad y calificación.
 Implementa métodos getter y setter, y un método que determine si el estudiante aprobó (calificación mayor o igual a 6).'''
 
-class Estudiante():
+class Estudiante:
     
     def __init__(self, nombre = "Rodrigo", edad = 18):
         self.nombre = nombre

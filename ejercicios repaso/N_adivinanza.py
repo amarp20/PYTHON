@@ -4,7 +4,7 @@ Incluye un método que permita al usuario adivinar y devuelva pistas ("más alto
 
 import random
 
-class Adivinanza():
+class Adivinanza:
 
     def __init__(self, numero=0):
         self.numero = numero

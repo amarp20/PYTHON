@@ -2,7 +2,7 @@
 Crea una clase Producto con atributos para nombre, precio y cantidad en stock.
 Añade un método que calcule el valor total del inventario (precio × cantidad).'''
 
-class Producto():
+class Producto:
     
     inventario = {}
     totales = []
@@ -25,11 +25,11 @@ class Producto():
     
 cosa1 = Producto("raton",20,50)
 cosa1.meter_productos()
-cosa2 = Producto("teclado",30,50)
-cosa2.meter_productos()
-cosa3 = Producto("cpu",200,50)
-cosa3.meter_productos()
-cosa4 = Producto("monitor",100,50)
-cosa4.meter_productos()
-cosa4.precio_total()
+cosa1 = Producto("teclado",30,50)
+cosa1.meter_productos()
+cosa1 = Producto("cpu",200,50)
+cosa1.meter_productos()
+cosa1 = Producto("monitor",100,50)
+cosa1.meter_productos()
+cosa1.precio_total()
 

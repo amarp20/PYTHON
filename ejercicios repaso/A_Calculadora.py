@@ -1,7 +1,7 @@
 '''Crea una clase Claculadora que tenga métodos para sumar, restar, multiplicar y dividir dos números.
 Incluye un constructor que inicialice los dos números como atributos.'''
 
-class Calculadora():
+class Calculadora:
     
     def __init__(self, numero1, numero2):
         self.numero1 = numero1

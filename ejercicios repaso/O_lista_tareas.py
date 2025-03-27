@@ -51,7 +51,7 @@ class Tarea:
     def estado_completada(self):
         tarea = str.upper(input("Introduzca el nombre de la tarea que quiere marcar como completada: "))  
         if tarea in self.tareas: 
-            self.tareas[tarea]["Estado"]= "Completada"
+            self.tareas[tarea].update({"Estado": "Completada"})
             print("Modificación realizada con éxito.")
         else:
             print(f"La tarea '{tarea}' no se encuentra en la lista.")
@@ -83,6 +83,7 @@ class Tarea:
                 print(".........")
                 time.sleep(2)
                 print("Datos guardados.")
+                self.guardar_lista()
                 break
 
 tarea1 = Tarea()

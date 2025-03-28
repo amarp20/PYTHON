@@ -13,6 +13,6 @@ class Ordenador:
                     self.lista[i], self.lista[i+1] = self.lista[i+1], self.lista[i]
         return self.lista
 
-lista = [1,35,16,103,94,109,3,7]
+lista = [1,35,16,103,94,109,3,7,100,2,4,5,6,7,236,3]
 ordenar = Ordenador(lista)
 print(ordenar.ordenar())

@@ -1,0 +1,10 @@
+{
+    "FREGAR": {
+        "Descripcion": "dejar todo limpio",
+        "Estado": "No completada"
+    },
+    "BARRER": {
+        "Descripcion": "dejar todo barrido",
+        "Estado": "Completada"
+    }
+}
